@@ -104,7 +104,7 @@ export default function SideBar({open, handleDrawerClose}) {
     {text: 'Line Chart', icon: <TimelineIcon />, path: '/line'},
     {text: 'Geography Chart', icon: <MapIcon />, path: '/geography'},
   ];
-  console.log(location.pathname);
+
   return (
     <Drawer variant="permanent" open={open}>
       <DrawerHeader>
