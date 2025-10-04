@@ -5,14 +5,17 @@ import {
   MenuItem,
   NativeSelect,
   Select,
+  Snackbar,
   Stack,
 } from '@mui/material';
+
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import React from 'react';
 import {useForm} from 'react-hook-form';
 import * as yup from 'yup';
 import {yupResolver} from '@hookform/resolvers/yup';
+import {SnackbarProvider, useSnackbar} from 'notistack';
 
 const schema = yup
   .object({
@@ -27,6 +30,15 @@ const schema = yup
 
 export default function Profile() {
   const [userInput, setUserInput] = React.useState('');
+
+  // Start Snackbar
+  const {enqueueSnackbar} = useSnackbar();
+
+  const handleClickVariant = (variant) => () => {
+    // variant could be success, error, warning, info, or default
+    enqueueSnackbar('Your account has been createa.', { variant });
+  };
+  // End Snackbar //
 
   const {
     register,
@@ -104,6 +116,7 @@ export default function Profile() {
           type="submit"
           sx={{width: '70%', mx: 'auto', my: 5}}
           variant="contained"
+          onClick={handleClickVariant('success')}
         >
           Create Account
         </Button>

@@ -7,6 +7,7 @@ import { styled } from '@mui/material';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { darkTheme } from './components/Theme';
 import { Outlet } from 'react-router';
+import { SnackbarProvider } from 'notistack';
 
 
   const DrawerHeader = styled('div')(({theme}) => ({
@@ -31,22 +32,21 @@ export default function MiniDrawer() {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}> 
+    <ThemeProvider theme={darkTheme}>
       <CssBaseline>
-        <Box sx={{display: 'flex'}}>
-          <CssBaseline />
+        <SnackbarProvider maxSnack={3}>
+          <Box sx={{display: 'flex'}}>
+            <CssBaseline />
 
-          <TopBar
-            open={open}
-            handleDrawerOpen={handleDrawerOpen}
-          />
+            <TopBar open={open} handleDrawerOpen={handleDrawerOpen} />
 
-          <SideBar open={open} handleDrawerClose={handleDrawerClose} />
-          <Box component="main" sx={{flexGrow: 1, p: 3}}>
-            <DrawerHeader />
-            <Outlet />
+            <SideBar open={open} handleDrawerClose={handleDrawerClose} />
+            <Box component="main" sx={{flexGrow: 1, p: 3}}>
+              <DrawerHeader />
+              <Outlet />
+            </Box>
           </Box>
-        </Box>
+        </SnackbarProvider>
       </CssBaseline>
     </ThemeProvider>
   );
