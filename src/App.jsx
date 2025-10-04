@@ -34,7 +34,7 @@ export default function MiniDrawer() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline>
-        <SnackbarProvider maxSnack={3}>
+        <SnackbarProvider maxSnack={1} autoHideDuration={3000}>
           <Box sx={{display: 'flex'}}>
             <CssBaseline />
 
