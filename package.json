@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@hookform/resolvers": "^5.2.2",
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
     "@mui/x-data-grid": "^8.13.1",
@@ -19,8 +20,10 @@
     "@mui/x-data-grid-premium": "^8.13.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-hook-form": "^7.64.0",
     "react-router": "^7.8.1",
-    "react-router-dom": "^7.7.1"
+    "react-router-dom": "^7.7.1",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

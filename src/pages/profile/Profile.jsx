@@ -10,12 +10,35 @@ import {
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import React from 'react';
+import {useForm} from 'react-hook-form';
+import * as yup from 'yup';
+import {yupResolver} from '@hookform/resolvers/yup';
+
+const schema = yup
+  .object({
+    firstName: yup.string().required(),
+    lastName: yup.string().required(),
+    email: yup.string().required(),
+    phoneNumber: yup.number().required(),
+    addressOne: yup.string().required(),
+    addressTwo: yup.string().required(),
+  })
+  .required();
 
 export default function Profile() {
-  const [userInput, setAge] = React.useState('');
+  const [userInput, setUserInput] = React.useState('');
+
+  const {
+    register,
+    handleSubmit,
+    formState: {errors},
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+  const onSubmit = (data) => console.log(data);
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setUserInput(event.target.value);
   };
   return (
     <>
@@ -26,17 +49,49 @@ export default function Profile() {
           flexDirection: 'column',
           gap: 2,
         }}
-        noValidate
         autoComplete="off"
+        onSubmit={handleSubmit(onSubmit)}
       >
         <Stack sx={{flexDirection: 'row', gap: 2}}>
-          <TextField sx={{flex: 1}} label="First Name" variant="outlined" />
-          <TextField sx={{flex: 1}} label="Last Name" variant="outlined" />
+          <TextField
+            {...register('firstName')}
+            error={errors.firstName ? true : false}
+            helperText={errors.firstName ? 'This field is required *' : null}
+            sx={{flex: 1}}
+            label="First Name"
+            variant="outlined"
+          />
+          <TextField
+            {...register('lastName')}
+            error={errors.lastName ? true : false}
+            helperText={errors.firstName ? 'This field is required *' : null}
+            sx={{flex: 1}}
+            label="Last Name"
+            variant="outlined"
+          />
         </Stack>
-        <TextField label="Email" variant="outlined" />
-        <TextField label="Phone Number" variant="outlined" />
-        <TextField label="Address 1" variant="outlined" />
-        <TextField label="Address 1" variant="outlined" />
+        <TextField
+          {...register('email')}
+          error={errors.email ? true : false}
+          helperText={errors.email ? 'Email is required *' : null}
+          label="Email"
+          variant="outlined"
+        />
+        <TextField
+          {...register('phoneNumber')}
+          error={errors.phoneNumber ? true : false}
+          helperText={errors.phoneNumber ? 'This field is required *' : null}
+          label="Phone Number"
+          variant="outlined"
+        />
+        <TextField
+          {...register('addressOne')}
+          error={errors.addressOne ? true : false}
+          helperText={errors.addressOne ? 'This field is required *' : null}
+          label="Address 1"
+          variant="outlined"
+        />
+        <TextField label="Address 2" variant="outlined" />
         <FormControl sx={{width: '50%'}}>
           <InputLabel>Select</InputLabel>
           <Select value={userInput} label="Select" onChange={handleChange}>
