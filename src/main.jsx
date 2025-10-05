@@ -12,7 +12,7 @@ import Faq from './pages/faq/Faq';
 import Bar from './pages/bar/Bar';
 import Pie from './pages/pie/Pie';
 import Line from './pages/line/Line';
-import Geography from './pages/geography/Geography';
+import {Geography} from './pages/geography/Geography';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
