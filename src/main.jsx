@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Routes, Route} from 'react-router';
 import App from './App';
 import Dashboard from './pages/dashboard/Dashboard';
-import Team  from './pages/team/Team';
+import Team from './pages/team/Team';
 import Contacts from './pages/contacts/Contacts';
 import Invoices from './pages/invoices/Invoices';
 import Profile from './pages/profile/Profile';
@@ -13,8 +13,6 @@ import Bar from './pages/bar/Bar';
 import Pie from './pages/pie/Pie';
 import Line from './pages/line/Line';
 import Geography from './pages/geography/Geography';
-
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

@@ -88,21 +88,41 @@ export default function SideBar({open, handleDrawerClose}) {
   }));
 
   const arrayOne = [
-    {text: 'Dashboard', icon: <HomeIcon />, path: '/'},
-    {text: 'Manage Team', icon: <PeopleIcon />, path: '/team'},
-    {text: 'Contacts Information', icon: <ContactsIcon />, path: '/contacts'},
-    {text: 'Invoices Balances', icon: <FeedIcon />, path: '/invoices'},
+    {text: 'Dashboard', icon: <HomeIcon />, path: '/admin-dashboard'},
+    {text: 'Manage Team', icon: <PeopleIcon />, path: '/admin-dashboard/team'},
+    {
+      text: 'Contacts Information',
+      icon: <ContactsIcon />,
+      path: '/admin-dashboard/contacts',
+    },
+    {
+      text: 'Invoices Balances',
+      icon: <FeedIcon />,
+      path: '/admin-dashboard/invoices',
+    },
   ];
   const arrayTwo = [
-    {text: 'Profile Form', icon: <PersonIcon />, path: '/profile'},
-    {text: 'Calender', icon: <CalendarMonthIcon />, path: '/calender'},
-    {text: 'FAQ Page', icon: <HelpIcon />, path: '/faq'},
+    {
+      text: 'Profile Form',
+      icon: <PersonIcon />,
+      path: '/admin-dashboard/profile',
+    },
+    {
+      text: 'Calender',
+      icon: <CalendarMonthIcon />,
+      path: '/admin-dashboard/calender',
+    },
+    {text: 'FAQ Page', icon: <HelpIcon />, path: '/admin-dashboard/faq'},
   ];
   const arrayThree = [
-    {text: 'Bar Chart', icon: <BarChartIcon />, path: '/bar'},
-    {text: 'Pie Chart', icon: <PieChartIcon />, path: '/pie'},
-    {text: 'Line Chart', icon: <TimelineIcon />, path: '/line'},
-    {text: 'Geography Chart', icon: <MapIcon />, path: '/geography'},
+    {text: 'Bar Chart', icon: <BarChartIcon />, path: '/admin-dashboard/bar'},
+    {text: 'Pie Chart', icon: <PieChartIcon />, path: '/admin-dashboard/pie'},
+    {text: 'Line Chart', icon: <TimelineIcon />, path: '/admin-dashboard/line'},
+    {
+      text: 'Geography Chart',
+      icon: <MapIcon />,
+      path: '/admin-dashboard/geography',
+    },
   ];
 
   return (
@@ -160,7 +180,12 @@ export default function SideBar({open, handleDrawerClose}) {
             disablePadding
             sx={{
               display: 'block',
-              bgcolor: location.pathname == item.path ? theme.palette.mode == 'dark'? grey[800] : grey[400] : null,
+              bgcolor:
+                location.pathname == item.path
+                  ? theme.palette.mode == 'dark'
+                    ? grey[800]
+                    : grey[400]
+                  : null,
             }}
           >
             <ListItemButton
@@ -224,7 +249,12 @@ export default function SideBar({open, handleDrawerClose}) {
             disablePadding
             sx={{
               display: 'block',
-              bgcolor: location.pathname == item.path ? theme.palette.mode == 'dark'? grey[800] : grey[400] : null,
+              bgcolor:
+                location.pathname == item.path
+                  ? theme.palette.mode == 'dark'
+                    ? grey[800]
+                    : grey[400]
+                  : null,
             }}
           >
             <ListItemButton
@@ -288,7 +318,12 @@ export default function SideBar({open, handleDrawerClose}) {
             disablePadding
             sx={{
               display: 'block',
-              bgcolor: location.pathname == item.path ? theme.palette.mode == 'dark'? grey[800] : grey[400] : null,
+              bgcolor:
+                location.pathname == item.path
+                  ? theme.palette.mode == 'dark'
+                    ? grey[800]
+                    : grey[400]
+                  : null,
             }}
           >
             <ListItemButton
