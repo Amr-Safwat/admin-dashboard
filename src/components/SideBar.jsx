@@ -24,6 +24,8 @@ import {Avatar, Typography} from '@mui/material';
 import {useNavigate} from 'react-router';
 import {useLocation} from 'react-router';
 import {grey} from '@mui/material/colors';
+// @ts-ignore
+import image from '../assets/Amr.jpg'; 
 
 const drawerWidth = 240;
 
@@ -138,7 +140,6 @@ export default function SideBar({open, handleDrawerClose}) {
       </DrawerHeader>
 
       <Divider />
-
       <Avatar
         sx={{
           mx: 'auto',
@@ -148,8 +149,8 @@ export default function SideBar({open, handleDrawerClose}) {
           width: open ? 80 : 45,
           transition: '0.3s',
         }}
-        alt="Remy Sharp"
-        src="/static/images/avatar/1.jpg"
+        alt=""
+        src={image}
       />
 
       {open ? (
