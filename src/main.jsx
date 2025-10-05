@@ -22,7 +22,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}>
+        <Route path="/admin-dashboard" element={<App />}>
           <Route index element={<Dashboard />} />
           <Route path="team" element={<Team />} />
           <Route path="contacts" element={<Contacts window={undefined} />} />
