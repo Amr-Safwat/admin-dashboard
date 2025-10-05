@@ -25,7 +25,7 @@ import {useNavigate} from 'react-router';
 import {useLocation} from 'react-router';
 import {grey} from '@mui/material/colors';
 // @ts-ignore
-import image from '../assets/Amr.jpg'; 
+import image from '../assets/Amr.jpg';
 
 const drawerWidth = 240;
 
