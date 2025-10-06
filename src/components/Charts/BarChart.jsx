@@ -78,7 +78,7 @@ export default function BarAnimation() {
 }
 
 const highlightScope = {
-  highlight: 'series',
+  highlight: 'item',
   fade: 'global',
 };
 
