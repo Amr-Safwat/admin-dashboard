@@ -18,9 +18,16 @@ const xLabels = [
   'Page j',
 ];
 
-export default function SimpleLineChart() {
+export default function SimpleLineChart({height = null, marginT = null, marginL = null}) {
   return (
-    <Box sx={{width: '90%', height: 500, mt: 30, ml: 5}}>
+    <Box
+      sx={{
+        width: '90%',
+        height: height != null ? height : 500,
+        mt: marginT != null ? marginT : 30,
+        ml: marginL != null ? marginL : 5,
+      }}
+    >
       <LineChart
         series={[
           {data: pData, label: 'pv'},
