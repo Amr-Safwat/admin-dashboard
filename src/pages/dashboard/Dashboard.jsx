@@ -67,7 +67,7 @@ export default function Dashboard() {
         </Stack>
         <Box
           className="right-section"
-          sx={{ overflow: 'auto'}}
+          // sx={{ overflow: 'auto'}}
           height={435}
           flexGrow={1}
         >
@@ -84,16 +84,16 @@ export default function Dashboard() {
             </Typography>
           </Card>
 
-          <Stack className="list" sx={{mt: 2, overflow: 'auto'}} gap={1}>
-            <CardPrice />
-            <CardPrice />
-            <CardPrice />
-            <CardPrice />
-            <CardPrice />
-            <CardPrice />
-            <CardPrice />
-            <CardPrice />
-          </Stack>
+          <Box className="list" sx={{mt: 1, overflow: 'auto', height: 380}}>
+            <CardPrice name={'product-1'} />
+            <CardPrice name={'product-2'} />
+            <CardPrice name={'product-3'} />
+            <CardPrice name={'product-4'} />
+            <CardPrice name={'product-5'} />
+            <CardPrice name={'product-6'} />
+            <CardPrice name={'product-7'} />
+            <CardPrice name={'product-8'} />
+          </Box>
         </Box>
       </Stack>
     </>
@@ -101,10 +101,11 @@ export default function Dashboard() {
 }
 
 
-export const CardPrice = ()=>{
+export const CardPrice = ({name=null})=>{
   return (
     <Card
       sx={{
+        mt: '5px',
         p: '8px 20px',
         borderRadius: 2,
         display: 'flex',
@@ -113,8 +114,8 @@ export const CardPrice = ()=>{
       }}
     >
       <Box>
-        <Typography variant="h6">sds233cc</Typography>
-        <Typography>sds233cc</Typography>
+        <Typography variant="h6">{name}</Typography>
+        <Typography>this is product.</Typography>
       </Box>
       <Typography>2021-07-05</Typography>
       <Typography bgcolor={'red'} sx={{p: 1, borderRadius: 2}}>$32.92</Typography>
