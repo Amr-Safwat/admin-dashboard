@@ -7,8 +7,8 @@ import Checkbox from '@mui/material/Checkbox';
 import {BarChart} from '@mui/x-charts/BarChart';
 
 export default function BarAnimation() {
-  const [seriesNb, setSeriesNb] = React.useState(2);
-  const [itemNb, setItemNb] = React.useState(5);
+  const [seriesNb, setSeriesNb] = React.useState(3);
+  const [itemNb, setItemNb] = React.useState(6);
   const [skipAnimation, setSkipAnimation] = React.useState(false);
 
   const handleItemNbChange = (event, newValue) => {
@@ -76,11 +76,6 @@ export default function BarAnimation() {
     </Box>
   );
 }
-
-const highlightScope = {
-  highlight: 'item',
-  fade: 'global',
-};
 
 const series = [
   {
@@ -153,4 +148,4 @@ const series = [
       1421, 785, 1752, 800, 990, 1809, 1985, 665,
     ],
   },
-].map((s) => ({...s, highlightScope}));
+]

@@ -2,7 +2,7 @@ import * as React from 'react';
 import {PieChart} from '@mui/x-charts/PieChart';
 import {desktopOS, valueFormatter} from '../../components/Charts/webUsageStats';
 
-export default function Piechart() {
+export default function Piechart({isDashboard=null}) {
   return (
     <PieChart
       series={[
@@ -14,8 +14,8 @@ export default function Piechart() {
           valueFormatter,
         },
       ]}
-      height={800}
-      width={400}
+      height={isDashboard ? 350 : 800}
+      width={isDashboard ? 250 : 400}
     />
   );
 }

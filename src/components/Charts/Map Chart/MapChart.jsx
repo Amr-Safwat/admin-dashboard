@@ -4,11 +4,13 @@ import { Box } from '@mui/material';
 import {geography} from './world_countries';  
 
 
-export const MapChart = () => { 
+export const MapChart = ({isDashboard=null}) => { 
   return (
-    <Box sx={{height: '75vh', border: '1px solid white'}}>
+    <Box
+      sx={{height: isDashboard ? '350px' : '75vh', border: '1px solid white'}}
+    >
       <ResponsiveChoropleth /* or Choropleth for fixed dimensions */
-        projectionScale={150}
+        projectionScale={isDashboard? 100 : 150}
         data={data}
         features={geography.features}
         margin={{top: 0, right: 0, bottom: 0, left: 0}}

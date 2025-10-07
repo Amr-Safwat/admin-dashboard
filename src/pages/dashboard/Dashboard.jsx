@@ -2,6 +2,9 @@ import {Box, Button, Card, CardContent, Stack, Typography} from '@mui/material';
 import NpmSparkLine from '../../components/SparkLineChart/Dashboard';
 import {DownloadOutlined} from '@mui/icons-material';
 import SimpleLineChart from '../../components/Charts/LineChart';
+import Piechart from '../../components/Charts/PieCharts';
+import StackedBarChart from '../../components/Charts/Bar';
+import { MapChart } from '../../components/Charts/Map Chart/MapChart';
 
 export default function Dashboard() {
   return (
@@ -68,7 +71,7 @@ export default function Dashboard() {
                         color: 'purple',
                         fontWeight: 'bold',
                         fontSize: '20px',
-                        paddingBottom: '8px'
+                        paddingBottom: '8px',
                       }}
                     >
                       Revenue Generated
@@ -97,7 +100,7 @@ export default function Dashboard() {
             </Typography>
           </Card>
 
-          <Box className="list" sx={{mt: 1, overflow: 'auto', height: 380}}>
+          <Box className="list" sx={{mt: 1, overflow: 'auto', height: 378}}>
             <CardPrice name={'transaction-1'} />
             <CardPrice name={'transaction-2'} />
             <CardPrice name={'transaction-3'} />
@@ -110,7 +113,58 @@ export default function Dashboard() {
         </Box>
       </Stack>
 
-      <Box className={'row-3'}></Box>
+      <Stack className={'row-3'} direction={'row'} marginTop={3} gap={2} flexWrap={'wrap'}>
+        <Box flexGrow={1} width={'28%'}>
+          <Card sx={{borderRadius: 2}}>
+            <Typography
+              sx={{
+                color: 'purple',
+                fontWeight: 'bold',
+                fontSize: '20px',
+                paddingLeft: '30px',
+                paddingTop: '30px',
+              }}
+            >
+              Compaign
+            </Typography>
+            <Piechart isDashboard={true} />
+          </Card>
+        </Box>
+
+        <Box flexGrow={1} width={'45%'}>
+          <Card sx={{borderRadius: 2}}>
+            <Typography
+              sx={{
+                color: 'purple',
+                fontWeight: 'bold',
+                fontSize: '20px',
+                paddingLeft: '30px',
+                paddingTop: '30px',
+              }}
+            >
+              Compaign
+            </Typography>
+            <StackedBarChart />
+          </Card>
+        </Box>
+
+        <Box flexGrow={1} width={'30%'}>
+          <Card sx={{borderRadius: 2, width: '100%'}}>
+            <Typography
+              sx={{
+                color: 'purple',
+                fontWeight: 'bold',
+                fontSize: '20px',
+                paddingLeft: '30px',
+                paddingTop: '30px',
+              }}
+            >
+              Compaign
+            </Typography>
+            <MapChart isDashboard={true}/>
+          </Card>
+        </Box>
+      </Stack>
     </>
   );
 }
