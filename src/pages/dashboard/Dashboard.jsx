@@ -6,7 +6,7 @@ import SimpleLineChart from '../../components/Charts/LineChart';
 export default function Dashboard() {
   return (
     <>
-      <Box sx={{textAlign: 'end', my: 4}}>
+      <Box sx={{textAlign: 'end', mb: 4}}>
         <Button variant="contained">
           <DownloadOutlined />
           Download Reports
@@ -21,21 +21,29 @@ export default function Dashboard() {
         flexGrow={1}
         flexWrap={'wrap'}
       >
-        <Card sx={{padding: 3, borderRadius: 2}}>
-          <NpmSparkLine prop="Users" />
-        </Card>
+        <Box flexGrow={1}>
+          <Card sx={{padding: 3, borderRadius: 2}}>
+            <NpmSparkLine prop="Users" />
+          </Card>
+        </Box>
 
-        <Card sx={{padding: 3, borderRadius: 2}}>
-          <NpmSparkLine prop="Conversions" />
-        </Card>
+        <Box flexGrow={1}>
+          <Card sx={{padding: 3, borderRadius: 2}}>
+            <NpmSparkLine prop="Conversions" />
+          </Card>
+        </Box>
 
-        <Card sx={{padding: 3, borderRadius: 2}}>
-          <NpmSparkLine prop="Monthly Downloads" />
-        </Card>
+        <Box flexGrow={1}>
+          <Card sx={{padding: 3, borderRadius: 2}}>
+            <NpmSparkLine prop="Monthly Downloads" />
+          </Card>
+        </Box>
 
-        <Card sx={{padding: 3, borderRadius: 2}}>
-          <NpmSparkLine prop="Weekly Downloads" />
-        </Card>
+        <Box flexGrow={1}>
+          <Card sx={{padding: 3, borderRadius: 2}}>
+            <NpmSparkLine prop="Weekly Downloads" />
+          </Card>
+        </Box>
       </Box>
 
       <Stack
@@ -43,9 +51,9 @@ export default function Dashboard() {
         flexWrap={'wrap'}
         style={{marginTop: '20px'}}
         direction={'row'}
-        gap={2}
+        gap={4}
       >
-        <Stack className="left-section" flexGrow={1}>
+        <Box className="left-section" flexGrow={1}>
           <Card sx={{padding: 3, borderRadius: 2}}>
             <CardContent>
               <Stack>
@@ -64,7 +72,8 @@ export default function Dashboard() {
               </Stack>
             </CardContent>
           </Card>
-        </Stack>
+        </Box>
+
         <Box
           className="right-section"
           // sx={{ overflow: 'auto'}}
@@ -85,14 +94,14 @@ export default function Dashboard() {
           </Card>
 
           <Box className="list" sx={{mt: 1, overflow: 'auto', height: 380}}>
-            <CardPrice name={'product-1'} />
-            <CardPrice name={'product-2'} />
-            <CardPrice name={'product-3'} />
-            <CardPrice name={'product-4'} />
-            <CardPrice name={'product-5'} />
-            <CardPrice name={'product-6'} />
-            <CardPrice name={'product-7'} />
-            <CardPrice name={'product-8'} />
+            <CardPrice name={'transaction-1'} />
+            <CardPrice name={'transaction-2'} />
+            <CardPrice name={'transaction-3'} />
+            <CardPrice name={'transaction-4'} />
+            <CardPrice name={'transaction-5'} />
+            <CardPrice name={'transaction-6'} />
+            <CardPrice name={'transaction-7'} />
+            <CardPrice name={'transaction-8'} />
           </Box>
         </Box>
       </Stack>
@@ -100,8 +109,7 @@ export default function Dashboard() {
   );
 }
 
-
-export const CardPrice = ({name=null})=>{
+export const CardPrice = ({name = null}) => {
   return (
     <Card
       sx={{
@@ -118,7 +126,9 @@ export const CardPrice = ({name=null})=>{
         <Typography>this is product.</Typography>
       </Box>
       <Typography>2021-07-05</Typography>
-      <Typography bgcolor={'red'} sx={{p: 1, borderRadius: 2}}>$32.92</Typography>
+      <Typography bgcolor={'red'} sx={{p: 1, borderRadius: 2}}>
+        $32.92
+      </Typography>
     </Card>
   );
-}
+};
