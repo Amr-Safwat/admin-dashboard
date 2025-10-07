@@ -107,7 +107,6 @@ export const CardPrice = ()=>{
       sx={{
         p: '8px 20px',
         borderRadius: 2,
-        borderRight: 2,
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
