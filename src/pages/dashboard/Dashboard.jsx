@@ -51,10 +51,10 @@ export default function Dashboard() {
         flexWrap={'wrap'}
         style={{marginTop: '20px'}}
         direction={'row'}
-        gap={4}
+        gap={{xs: 4, sm: 2, lg: 2}}
       >
         <Box className="left-section" flexGrow={1}>
-          <Card sx={{padding: 3, borderRadius: 2}}>
+          <Card sx={{py: 3, px: {xs: 1, sm: 4, lg: 4}, borderRadius: 2}}>
             <CardContent>
               <Stack>
                 <Stack
@@ -63,7 +63,16 @@ export default function Dashboard() {
                   justifyContent={'space-between'}
                 >
                   <div>
-                    <Typography>Revenue Generated</Typography>
+                    <Typography
+                      sx={{
+                        color: 'purple',
+                        fontWeight: 'bold',
+                        fontSize: '20px',
+                        paddingBottom: '8px'
+                      }}
+                    >
+                      Revenue Generated
+                    </Typography>
                     <Typography>$62,235.89</Typography>
                   </div>
                   <DownloadOutlined />
@@ -74,19 +83,14 @@ export default function Dashboard() {
           </Card>
         </Box>
 
-        <Box
-          className="right-section"
-          // sx={{ overflow: 'auto'}}
-          height={435}
-          flexGrow={1}
-        >
+        <Box className="right-section" height={435} width={310} flexGrow={1}>
           <Card sx={{borderRadius: 2}}>
             <Typography
               sx={{
                 color: 'purple',
                 fontWeight: 'bold',
                 fontSize: '20px',
-                padding: '10px 20px',
+                padding: '17px 20px',
               }}
             >
               Recent Transactions
@@ -105,6 +109,8 @@ export default function Dashboard() {
           </Box>
         </Box>
       </Stack>
+
+      <Box className={'row-3'}></Box>
     </>
   );
 }
