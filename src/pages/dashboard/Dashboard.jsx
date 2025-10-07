@@ -186,7 +186,7 @@ export const CardPrice = ({name = null}) => {
         <Typography>this is product.</Typography>
       </Box>
       <Typography>2021-07-05</Typography>
-      <Typography bgcolor={'red'} sx={{p: 1, borderRadius: 2}}>
+      <Typography color='white' bgcolor={'red'} sx={{p: 1, borderRadius: 2}}>
         $32.92
       </Typography>
     </Card>

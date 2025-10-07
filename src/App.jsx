@@ -3,12 +3,18 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import TopBar from './components/TopBar';
 import SideBar from './components/SideBar';
-import { styled } from '@mui/material';
+import { createTheme, styled } from '@mui/material';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { darkTheme } from './components/Theme';
 import { Outlet } from 'react-router';
 import { SnackbarProvider } from 'notistack';
 
+
+const theme = createTheme({
+  colorSchemes: {
+    dark: true,
+  },
+});
 
   const DrawerHeader = styled('div')(({theme}) => ({
     display: 'flex',
@@ -32,7 +38,7 @@ export default function MiniDrawer() {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline>
         <SnackbarProvider maxSnack={1} autoHideDuration={3000}>
           <Box sx={{display: 'flex'}}>

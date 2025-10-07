@@ -9,8 +9,11 @@ import {AccountCircle, Pallet} from '@mui/icons-material';
 import SettingsIcon from '@mui/icons-material/Settings';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import {ThemeProvider, createTheme, useColorScheme} from '@mui/material/styles';
 
 const drawerWidth = 240;
+
+
 
 const Search = styled('div')(({theme}) => ({
   position: 'relative',
@@ -54,6 +57,7 @@ const StyledInputBase = styled(InputBase)(({theme}) => ({
 
 export default function TopBar({open, handleDrawerOpen}) {
   const theme = useTheme();
+  const {mode, setMode} = useColorScheme();
 
   const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
@@ -111,11 +115,19 @@ export default function TopBar({open, handleDrawerOpen}) {
         </Search>
         <Stack flexGrow={1} flexDirection={'row'} justifyContent={'end'}>
           {theme.palette.mode == 'dark' ? (
-            <IconButton aria-label="delete" color="inherit">
+            <IconButton
+              aria-label="delete"
+              color="inherit"
+              onClick={() => setMode('light')}
+            >
               <DarkModeOutlinedIcon />
             </IconButton>
           ) : (
-            <IconButton aria-label="delete" color="inherit">
+            <IconButton
+              aria-label="delete"
+              color="inherit"
+              onClick={() => setMode('dark')}
+            >
               <LightModeOutlinedIcon />
             </IconButton>
           )}
