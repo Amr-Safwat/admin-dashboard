@@ -13,6 +13,7 @@ import Bar from './pages/bar/Bar';
 import Pie from './pages/pie/Pie';
 import Line from './pages/line/Line';
 import {Geography} from './pages/geography/Geography';
+import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
