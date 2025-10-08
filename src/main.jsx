@@ -14,6 +14,7 @@ import Pie from './pages/pie/Pie';
 import Line from './pages/line/Line';
 import {Geography} from './pages/geography/Geography';
 import './index.css'
+import NotFound from './pages/NotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -33,7 +34,9 @@ root.render(
           <Route path="pie" element={<Pie />} />
           <Route path="line" element={<Line />} />
           <Route path="geography" element={<Geography />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
