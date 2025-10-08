@@ -16,6 +16,7 @@ import {useForm} from 'react-hook-form';
 import * as yup from 'yup';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {SnackbarProvider, useSnackbar} from 'notistack';
+import Header from '../../components/Header';
 
 const schema = yup
   .object({
@@ -64,6 +65,8 @@ export default function Profile() {
         autoComplete="off"
         onSubmit={handleSubmit(onSubmit)}
       >
+        <Header title={'Create account'} paragraph={'Create a new user profile'} />
+
         <Stack sx={{flexDirection: 'row', gap: 2}}>
           <TextField
             {...register('firstName')}

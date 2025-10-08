@@ -15,14 +15,14 @@ import {
 import Box from '@mui/material/Box';
 import {rows, columns} from './data';
 import {Button, ThemeProvider, useTheme} from '@mui/material';
-import { Cancel, Search } from '@mui/icons-material';
+import {Cancel, Search} from '@mui/icons-material';
 import clsx from 'clsx';
-import { TailwindDemoContainer } from '@mui/x-data-grid/internals';
+import {TailwindDemoContainer} from '@mui/x-data-grid/internals';
+import Header from '../../components/Header';
 
 export default function Contacts({window}) {
-
   const theme = useTheme();
-  
+
   function TextInput(props) {
     return (
       <input
@@ -101,9 +101,12 @@ export default function Contacts({window}) {
       </Toolbar>
     );
   }
-const documentBody = window !== undefined ? window().document.body : undefined;
+  const documentBody =
+    window !== undefined ? window().document.body : undefined;
   return (
     <Box sx={{height: 800, width: '100%'}}>
+      <Header title={'Contacts'} paragraph={'This list of contacts information'} />
+
       <ThemeProvider theme={theme}>
         <TailwindDemoContainer documentBody={documentBody}>
           <DataGrid

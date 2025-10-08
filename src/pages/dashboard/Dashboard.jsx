@@ -5,10 +5,12 @@ import SimpleLineChart from '../../components/Charts/LineChart';
 import Piechart from '../../components/Charts/PieCharts';
 import StackedBarChart from '../../components/Charts/Bar';
 import { MapChart } from '../../components/Charts/Map Chart/MapChart';
+import Header from '../../components/Header';
 
 export default function Dashboard() {
   return (
     <>
+      <Header title={'Dashboard'} paragraph={'Welcome to my dashboard'} />
       <Box sx={{textAlign: 'end', mb: 4}}>
         <Button variant="contained">
           <DownloadOutlined />
@@ -113,7 +115,13 @@ export default function Dashboard() {
         </Box>
       </Stack>
 
-      <Stack className={'row-3'} direction={'row'} marginTop={3} gap={2} flexWrap={'wrap'}>
+      <Stack
+        className={'row-3'}
+        direction={'row'}
+        marginTop={3}
+        gap={2}
+        flexWrap={'wrap'}
+      >
         <Box flexGrow={1} width={'28%'}>
           <Card sx={{borderRadius: 2}}>
             <Typography
@@ -161,7 +169,7 @@ export default function Dashboard() {
             >
               Compaign
             </Typography>
-            <MapChart isDashboard={true}/>
+            <MapChart isDashboard={true} />
           </Card>
         </Box>
       </Stack>

@@ -5,6 +5,7 @@ import {Box, Typography} from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import PersonIcon from '@mui/icons-material/Person';
+import Header from '../../components/Header';
 
 export default function Team() {
   const theme = useTheme();
@@ -88,6 +89,7 @@ export default function Team() {
   ];
   return (
       <Box sx={{height: 800, width: '100%'}}>
+        <Header title={'Manage Team'} paragraph={'Managing the team members'} />
         <DataGrid
           rows={rows}
           // @ts-ignore
