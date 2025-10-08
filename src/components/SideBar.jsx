@@ -13,14 +13,14 @@ import HomeIcon from '@mui/icons-material/Home';
 import PeopleIcon from '@mui/icons-material/People';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import FeedIcon from '@mui/icons-material/Feed';
-import PersonIcon from '@mui/icons-material/Person';
+import PersonIcon from '@mui/icons-material/Person'; 
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import PieChartIcon from '@mui/icons-material/PieChart';
 import TimelineIcon from '@mui/icons-material/Timeline';
 import MapIcon from '@mui/icons-material/Map';
 import HelpIcon from '@mui/icons-material/Help';
-import {Avatar, Typography} from '@mui/material';
+import {Avatar, Tooltip, Typography} from '@mui/material';
 import {useNavigate} from 'react-router';
 import {useLocation} from 'react-router';
 import {grey} from '@mui/material/colors';
@@ -189,54 +189,56 @@ export default function SideBar({open, handleDrawerClose}) {
                   : null,
             }}
           >
-            <ListItemButton
-              onClick={() => {
-                navigate(item.path);
-              }}
-              sx={[
-                {
-                  minHeight: 48,
-                  px: 2.5,
-                },
-                open
-                  ? {
-                      justifyContent: 'initial',
-                    }
-                  : {
-                      justifyContent: 'center',
-                    },
-              ]}
-            >
-              <ListItemIcon
+            <Tooltip title={open? '': item.text} placement="right" arrow>
+              <ListItemButton
+                onClick={() => {
+                  navigate(item.path);
+                }}
                 sx={[
                   {
-                    minWidth: 0,
-                    justifyContent: 'center',
+                    minHeight: 48,
+                    px: 2.5,
                   },
                   open
                     ? {
-                        mr: 3,
+                        justifyContent: 'initial',
                       }
                     : {
-                        mr: 'auto',
+                        justifyContent: 'center',
                       },
                 ]}
               >
-                {item.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={item.text}
-                sx={[
-                  open
-                    ? {
-                        opacity: 1,
-                      }
-                    : {
-                        opacity: 0,
-                      },
-                ]}
-              />
-            </ListItemButton>
+                <ListItemIcon
+                  sx={[
+                    {
+                      minWidth: 0,
+                      justifyContent: 'center',
+                    },
+                    open
+                      ? {
+                          mr: 3,
+                        }
+                      : {
+                          mr: 'auto',
+                        },
+                  ]}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText
+                  primary={item.text}
+                  sx={[
+                    open
+                      ? {
+                          opacity: 1,
+                        }
+                      : {
+                          opacity: 0,
+                        },
+                  ]}
+                />
+              </ListItemButton>
+            </Tooltip>
           </ListItem>
         ))}
       </List>
@@ -258,54 +260,56 @@ export default function SideBar({open, handleDrawerClose}) {
                   : null,
             }}
           >
-            <ListItemButton
-              onClick={() => {
-                navigate(item.path);
-              }}
-              sx={[
-                {
-                  minHeight: 48,
-                  px: 2.5,
-                },
-                open
-                  ? {
-                      justifyContent: 'initial',
-                    }
-                  : {
-                      justifyContent: 'center',
-                    },
-              ]}
-            >
-              <ListItemIcon
+            <Tooltip title={open? '': item.text} placement="right" arrow>
+              <ListItemButton
+                onClick={() => {
+                  navigate(item.path);
+                }}
                 sx={[
                   {
-                    minWidth: 0,
-                    justifyContent: 'center',
+                    minHeight: 48,
+                    px: 2.5,
                   },
                   open
                     ? {
-                        mr: 3,
+                        justifyContent: 'initial',
                       }
                     : {
-                        mr: 'auto',
+                        justifyContent: 'center',
                       },
                 ]}
               >
-                {item.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={item.text}
-                sx={[
-                  open
-                    ? {
-                        opacity: 1,
-                      }
-                    : {
-                        opacity: 0,
-                      },
-                ]}
-              />
-            </ListItemButton>
+                <ListItemIcon
+                  sx={[
+                    {
+                      minWidth: 0,
+                      justifyContent: 'center',
+                    },
+                    open
+                      ? {
+                          mr: 3,
+                        }
+                      : {
+                          mr: 'auto',
+                        },
+                  ]}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText
+                  primary={item.text}
+                  sx={[
+                    open
+                      ? {
+                          opacity: 1,
+                        }
+                      : {
+                          opacity: 0,
+                        },
+                  ]}
+                />
+              </ListItemButton>
+            </Tooltip>
           </ListItem>
         ))}
       </List>
@@ -327,54 +331,56 @@ export default function SideBar({open, handleDrawerClose}) {
                   : null,
             }}
           >
-            <ListItemButton
-              onClick={() => {
-                navigate(item.path);
-              }}
-              sx={[
-                {
-                  minHeight: 48,
-                  px: 2.5,
-                },
-                open
-                  ? {
-                      justifyContent: 'initial',
-                    }
-                  : {
-                      justifyContent: 'center',
-                    },
-              ]}
-            >
-              <ListItemIcon
+            <Tooltip title={open? '': item.text} placement="right" arrow>
+              <ListItemButton
+                onClick={() => {
+                  navigate(item.path);
+                }}
                 sx={[
                   {
-                    minWidth: 0,
-                    justifyContent: 'center',
+                    minHeight: 48,
+                    px: 2.5,
                   },
                   open
                     ? {
-                        mr: 3,
+                        justifyContent: 'initial',
                       }
                     : {
-                        mr: 'auto',
+                        justifyContent: 'center',
                       },
                 ]}
               >
-                {item.icon}
-              </ListItemIcon>
-              <ListItemText
-                primary={item.text}
-                sx={[
-                  open
-                    ? {
-                        opacity: 1,
-                      }
-                    : {
-                        opacity: 0,
-                      },
-                ]}
-              />
-            </ListItemButton>
+                <ListItemIcon
+                  sx={[
+                    {
+                      minWidth: 0,
+                      justifyContent: 'center',
+                    },
+                    open
+                      ? {
+                          mr: 3,
+                        }
+                      : {
+                          mr: 'auto',
+                        },
+                  ]}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText
+                  primary={item.text}
+                  sx={[
+                    open
+                      ? {
+                          opacity: 1,
+                        }
+                      : {
+                          opacity: 0,
+                        },
+                  ]}
+                />
+              </ListItemButton>
+            </Tooltip>
           </ListItem>
         ))}
       </List>
