@@ -122,7 +122,7 @@ export default function Dashboard() {
         gap={2}
         flexWrap={'wrap'}
       >
-        <Box flexGrow={1} width={'28%'}>
+        <Box flexGrow={1} width={{xs: '100%',sm: '100%', lg: '25%' }}>
           <Card sx={{borderRadius: 2}}>
             <Typography
               sx={{
@@ -139,7 +139,7 @@ export default function Dashboard() {
           </Card>
         </Box>
 
-        <Box flexGrow={1} width={'45%'}>
+        <Box flexGrow={1} width={{xs: '100%',sm: '100%', lg: '35%' }}>
           <Card sx={{borderRadius: 2}}>
             <Typography
               sx={{
@@ -156,7 +156,7 @@ export default function Dashboard() {
           </Card>
         </Box>
 
-        <Box flexGrow={1} width={'30%'}>
+        <Box flexGrow={1} width={{xs: '100%',sm: '100%', lg: '28%' }}>
           <Card sx={{borderRadius: 2, width: '100%'}}>
             <Typography
               sx={{

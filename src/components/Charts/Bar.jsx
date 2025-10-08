@@ -18,6 +18,7 @@ export default function StackedBarChart() {
   return (
     <Box sx={{ height: 350}}>
       <BarChart
+      barLabel={'value'}
         series={[
           {data: pData, label: 'pv', id: 'pvId', stack: 'total'},
           {data: uData, label: 'uv', id: 'uvId', stack: 'total'},
